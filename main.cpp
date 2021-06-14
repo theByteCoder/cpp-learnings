@@ -91,5 +91,27 @@ int main()
     }
     cout << name << endl;
 
+    // while loop
+    int counter = -20;
+    while(counter < -10) {
+        cout << counter << endl;
+        counter++;
+    }
+    // for loop
+    int arr2[] = {10,20,30,40};
+    int arr3[4][2] = {
+        {1,10},
+        {2,20},
+        {3,30},
+        {4,40}
+        };
+    cout << sizeof(arr2) << endl;
+    for(int counter = 0; counter < sizeof(arr2); counter++) {
+        cout << arr2[counter] << endl;
+    }
+
+    // pointer memory address
+    cout << &counter << endl;
+
     return 0;
 }
