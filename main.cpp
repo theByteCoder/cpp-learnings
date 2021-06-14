@@ -9,18 +9,28 @@ int integers = -20;
 double doub = 2.1312;
 float flo = .0123123123;
 
+// void function
+void hello(){
+    cout << "Hello world!" << endl;
+}
+
+// return function
+string nameFunc(string name){
+    return "My full name is " + name;
+}
+
 int main()
 {
 
     // local scope
     int age = 29;
     age = 30;
-    cout << "Hello world!" << endl;
+    hello();
     cout << "This is " << name << ", glad to have you here" << endl;
 
     // update string
     name = "Subahsish Ghosh\n";
-    cout << "My full name is " << name;
+    cout << nameFunc(name);
     cout << "My age is "  << age<< endl;
 
     // manipulate string
@@ -41,10 +51,45 @@ int main()
     cout << 2 % 2 << endl;
     integers += doub;
     cout << integers;
-    cout << floor(1.46);
-    cout << round(1.46);
-    cout << ceil(1.46);
+    cout << floor(1.46) << endl;
+    cout << round(1.46) << endl;
+    cout << ceil(1.46) << endl;
 
+
+    // arrays
+    int arr[] = {1,2,3,4};
+    cout << arr[2] << endl;
+    arr[2] = 1;
+    cout << arr[2] << endl;
+
+    // boolean
+    bool isTrue = true;
+    bool isFalse = false;
+    if(isTrue || !isFalse) {
+        cout << "if" << endl;
+    } else if(isTrue && !isFalse) {
+        cout << "else if" << endl;
+    } else {
+        cout << "else" << endl;
+    }
+
+    // switch cases
+    int cases = 4;
+    switch(cases) {
+    case 1:
+        name = "subhasish";
+        break;
+    case 2:
+        name = "Suba Ghosh";
+        break;
+    case 3:
+        name = "Auba";
+        break;
+    default:
+        name = "SUBHASISH GHOSH";
+        break;
+    }
+    cout << name << endl;
 
     return 0;
 }
