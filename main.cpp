@@ -19,6 +19,76 @@ string nameFunc(string name){
     return "My full name is " + name;
 }
 
+class Book {
+    public:
+        string title;
+        string author;
+        int pages;
+
+        Book(string cTitle, string cAuthor, int cPages) {
+            title = cTitle;
+            author = cAuthor;
+            pages = cPages;
+        }
+
+};
+
+class Student {
+    private:
+        double gpa;
+    public:
+        string name;
+        string major;
+
+    Student(string cName, string cMajor, double cGpa) {
+        name = cName;
+        major = cMajor;
+        setGpa(cGpa);
+    }
+
+    // setter
+    void setGpa(double cGpa) {
+        if(cGpa >= 0 && cGpa <= 5) {
+            gpa = cGpa;
+        } else {
+            cout << "Invalid GPA" << endl;
+        }
+    }
+
+    // getter
+    double getGpa() {
+        if(gpa >= 0 && gpa <= 5) {
+            return gpa;
+        } else {
+            cout << "Invalid GPA" << endl;
+        }
+    }
+
+    // object function
+    bool hasHonours() {
+        if(gpa > 3.5) {
+            return true;
+        }
+        return false;
+    }
+
+};
+
+// inheritance
+// base class
+class Parent
+{
+    public:
+      int id_p;
+};
+
+// sub class inheriting from base class
+class Child : public Parent
+{
+    public:
+      int id_c;
+};
+
 int main()
 {
 
@@ -112,6 +182,40 @@ int main()
 
     // pointer memory address
     cout << &counter << endl;
+    string *pName = &name; // pointer int variable
+    cout << pName << endl;
+    cout << *pName << endl; // dereferencing pointer
+    cout << *&name << endl; // dereferencing pointer
+    int *pCounter = &counter; // pointer int variable
+    cout << pCounter << endl;
+    cout << *pCounter << endl; // dereferencing pointer
+    double *pDoub = &doub; // pointer int variable
+    cout << pDoub << endl;
+    cout << *pDoub << endl; // dereferencing pointer
+
+    Book book("Harry potter", "JK Rowling", 202);
+    cout << book.title << endl;
+    cout << book.author << endl;
+    cout << book.pages << endl;
+    book.pages = 208;
+    cout << book.pages << endl;
+
+    Student student("Subhasish", "Computer Science", 4.8);
+    bool hasHons = student.hasHonours();
+    cout << hasHons << endl;
+    cout << student.getGpa() << endl; // getter and setter
+    Student newStudent("Subhasish", "Computer Science", 2.8);
+    cout << newStudent.hasHonours() << endl;
+    cout << newStudent.getGpa() << endl; // getter and setter
+
+    // inheritance
+    Child obj1;
+    // object of class child has all data members
+    // and member functions of class parent
+    obj1.id_c = 7;
+    obj1.id_p = 91;
+    cout << "Child id is " <<  obj1.id_c << endl;
+    cout << "Parent id is " <<  obj1.id_p << endl;
 
     return 0;
 }
